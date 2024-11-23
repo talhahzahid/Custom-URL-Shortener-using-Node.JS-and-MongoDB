@@ -6,19 +6,13 @@ const urlSchema = new Schema(
     shortID: {
       type: String,
       required: true,
-      // unique: true,
+      unique: true,
     },
     redirectedUrl: {
       type: String,
       required: true,
     },
-    visitHistory: [
-      {
-        timestarps: {
-          type: Number,
-        },
-      },
-    ],
+    visitHistory: [ {timestamp: {  type: Number }},],
   },
   {
     timestamps: true,

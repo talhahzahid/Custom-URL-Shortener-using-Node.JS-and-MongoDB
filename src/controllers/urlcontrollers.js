@@ -4,8 +4,6 @@ import url from "../models/urlmodels.js";
 
 const handleURL = async (req, res) => {
   const { URL } = req.body;
-  console.log(URL);
-
   if (!URL) {
     return res.status(400).json({
       Error: "Url is required",
@@ -19,6 +17,7 @@ const handleURL = async (req, res) => {
   });
   res.status(200).json({
     id: shortid,
+    data: addUrlIntoDatabase,
   });
 };
 
